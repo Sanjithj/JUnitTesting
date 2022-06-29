@@ -28,7 +28,7 @@ public class RegistrationTesting {
 		
 	 Scanner scannerObject = new Scanner(System.in);
 
-     System.out.println("Enter Your First Name");
+     System.out.println("Enter the First Name");
      String firstName = scannerObject.next();
      checkValidFirstName(firstName);
 	}  
