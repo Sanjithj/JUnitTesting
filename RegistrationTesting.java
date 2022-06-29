@@ -6,30 +6,30 @@ import java.util.regex.Pattern;
 
 public class RegistrationTesting {
 	
-	public static void checkValidLastName(String lastName) {
-		
-	    boolean isLastName;
-	    String lastNameRegex = "[A-Z]{1}[a-z]{2,}";
-	    Pattern patternObject = Pattern.compile(lastNameRegex);
-	    if (lastName == null) {
-	        isLastName = false;
-	    }
-	    Matcher matcherObject = patternObject.matcher(lastName);
-	    isLastName = matcherObject.matches();
-	
-	    if (isLastName)
-	        System.out.println(lastName + " Valid Last Name");
-	    else
-	        System.out.println(lastName + "  Invalid Last Name");
-	}
 	 public static void main(String[] args) {
 		
 	Scanner scannerObject = new Scanner(System.in);
 
-    System.out.println("Enter Your Last Name");
-    String lastName = scannerObject.next();
-    checkValidLastName(lastName);
-
+	 System.out.println("Enter Your Email Address");
+     String email = scannerObject.next();
+     checkValidEmail(email);
+	 
 	 }
+	 public static void checkValidEmail(String email){
+
+	        boolean isEmail;
+	        String emailRegex = "^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$";
+	        Pattern patternObject = Pattern.compile(emailRegex);
+	        if (email == null) {
+	            isEmail = false;
+	        }
+	        Matcher matcherObject = patternObject.matcher(email);
+	        isEmail =  matcherObject.matches();
+
+	        if(isEmail)
+	            System.out.println(email+"  Valid Email\n");
+	        else
+	            System.out.println(email+"  Invalid Email ");
+	    }
 }
 
