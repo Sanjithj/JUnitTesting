@@ -10,29 +10,29 @@ public class RegistrationTesting {
 		
 	Scanner scannerObject = new Scanner(System.in);
 
-	   System.out.println("Enter Your Mobile Number");
-       String mobileNumber = scannerObject.next();
-       checkMobileNumber(mobileNumber);
-
+	  System.out.println("Enter the Password");
+      String password = scannerObject.next();
+      checkPassword(password);
+      
 	 
 	 }
-	 public static void checkMobileNumber(String mobileNumber){
+	 public static void checkPassword(String password){
 
-	        boolean isMobileNumber;
-	        String mobileNumberRegex = "(91)?[7-9][0-9]{9}";
-	        Pattern patternObject = Pattern.compile(mobileNumberRegex);
-	        if (mobileNumber == null) {
-	            isMobileNumber = false;
+	        boolean isPassword;
+	        String passwordRegex = "^([a-zA-Z0-9]*[\\-\\!\\@\\#\\$\\%\\^\\&\\*\\(\\)\\_\\+]*){8}$";
+	        Pattern patternObject = Pattern.compile(passwordRegex);
+	        if (password == null) {
+	            isPassword = false;
 	        }
-	        Matcher matcherObject = patternObject.matcher(mobileNumber);
-	        isMobileNumber =  matcherObject.matches();
+	        Matcher matcherObject = patternObject.matcher(password);
+	        isPassword =  matcherObject.matches();
 
-	        if(isMobileNumber)
-	            System.out.println(mobileNumber+ "  Valid  Mobile Number\n");
+	        if(isPassword)
+	            System.out.println(password+"   Password is  Valid\n");
 	        else
-	            System.out.println(mobileNumber+ "   Invalid Mobile Number");
+	            System.out.println(password+"   Password is Invalid");
 	    }
-
+	  
 	      
 }
 
